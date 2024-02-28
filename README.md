@@ -1,4 +1,4 @@
-# Electron-Cpytro-Robot-Trading-
+# Electron-Cpytro-Robot-Trading
 
 ## Description
 Electron-Cpytro-Robot-Trading is a user interface trading program built using ReactJS, ElectronJS, and CCXT. This project aims to provide traders with a seamless experience by combining the power of ReactJS for creating dynamic user interfaces, ElectronJS for packaging the application into a cross-platform desktop app, and CCXT for accessing various cryptocurrency exchanges programmatically.
