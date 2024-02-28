@@ -1,6 +1,7 @@
 {
   "name": "erectron-react",
-  "version": "0.1.0",
+  "author":"DAZ & Tight Co.,Ltd",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -11,6 +12,7 @@
     "autoprefixer": "^10.4.17",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
+    "electron-is-dev": "^3.0.1",
     "framer-motion": "^11.0.6",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
@@ -20,7 +22,7 @@
     "react-table": "^7.8.0",
     "recharts": "^2.12.1",
     "sequelize": "^6.35.2",
-    "sqlite3": "^5.1.7",
+    "sqlite3": "5.1.6",
     "tailwindcss": "^3.4.1",
     "wait-on": "^7.2.0",
     "web-vitals": "^2.1.4"
@@ -44,22 +46,30 @@
   },
   "build": {
     "appId": "your.app.id",
-    "productName": "YourProductName",
+    "productName": "Electron Trading",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "../public/Electron_Logo.png"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    }
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "src/**/*"
+    ]
   },
   "browserslist": {
     "production": [
+      "last 1 electron version",
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
+      "last 1 electron version",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"

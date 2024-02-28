@@ -1,6 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const db_connect = require('../src/db/connf');
-
+const path = require('path');
 const { insertGridData, deleteGridData } = require('../src/controllers/gridController');
 const { insertGridBotData, findAllBotData, findOneByBotName, updateBotData, deleteBotData } = require('../src/controllers/botController');
 
@@ -19,10 +19,17 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
+            
         },
     });
+    app.isPackaged
+  ? mainWindow.loadFile(path.join(__dirname, "index.html"))
+  : mainWindow.loadURL("http://localhost:7070");
+    
+   
+  
 
-    mainWindow.loadURL("http://localhost:7070");
+
 
     mainWindow.on("closed", function () {
         mainWindow = null;
